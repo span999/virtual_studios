@@ -1,0 +1,13 @@
+C:\MyPrivte\develop\C#\WPF\WpfApp02\WpfApp02\bin\Debug\WpfApp02.exe
+C:\MyPrivte\develop\C#\WPF\WpfApp02\WpfApp02\bin\Debug\WpfApp02.pdb
+C:\MyPrivte\develop\C#\WPF\WpfApp02\WpfApp02\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\MyPrivte\develop\C#\WPF\WpfApp02\WpfApp02\obj\x86\Debug\MainWindow.baml
+C:\MyPrivte\develop\C#\WPF\WpfApp02\WpfApp02\obj\x86\Debug\MainWindow.g.cs
+C:\MyPrivte\develop\C#\WPF\WpfApp02\WpfApp02\obj\x86\Debug\App.g.cs
+C:\MyPrivte\develop\C#\WPF\WpfApp02\WpfApp02\obj\x86\Debug\WpfApp02_MarkupCompile.cache
+C:\MyPrivte\develop\C#\WPF\WpfApp02\WpfApp02\obj\x86\Debug\WpfApp02.g.resources
+C:\MyPrivte\develop\C#\WPF\WpfApp02\WpfApp02\obj\x86\Debug\WpfApp02.Properties.Resources.resources
+C:\MyPrivte\develop\C#\WPF\WpfApp02\WpfApp02\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\MyPrivte\develop\C#\WPF\WpfApp02\WpfApp02\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\MyPrivte\develop\C#\WPF\WpfApp02\WpfApp02\obj\x86\Debug\WpfApp02.exe
+C:\MyPrivte\develop\C#\WPF\WpfApp02\WpfApp02\obj\x86\Debug\WpfApp02.pdb

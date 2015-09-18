@@ -1,0 +1,11 @@
+C:\MyPrivte\develop\C#\WPF\WpfApp02\WpfApp02\obj\x86\Release\MainWindow.baml
+C:\MyPrivte\develop\C#\WPF\WpfApp02\WpfApp02\obj\x86\Release\MainWindow.g.cs
+C:\MyPrivte\develop\C#\WPF\WpfApp02\WpfApp02\obj\x86\Release\App.g.cs
+C:\MyPrivte\develop\C#\WPF\WpfApp02\WpfApp02\obj\x86\Release\WpfApp02_MarkupCompile.cache
+C:\MyPrivte\develop\C#\WPF\WpfApp02\WpfApp02\obj\x86\Release\WpfApp02.g.resources
+C:\MyPrivte\develop\C#\WPF\WpfApp02\WpfApp02\obj\x86\Release\WpfApp02.Properties.Resources.resources
+C:\MyPrivte\develop\C#\WPF\WpfApp02\WpfApp02\bin\Release\WpfApp02.exe
+C:\MyPrivte\develop\C#\WPF\WpfApp02\WpfApp02\bin\Release\WpfApp02.pdb
+C:\MyPrivte\develop\C#\WPF\WpfApp02\WpfApp02\obj\x86\Release\WpfApp02.exe
+C:\MyPrivte\develop\C#\WPF\WpfApp02\WpfApp02\obj\x86\Release\WpfApp02.pdb
+C:\MyPrivte\develop\C#\WPF\WpfApp02\WpfApp02\obj\x86\Release\WpfApp02.csproj.GenerateResource.Cache
