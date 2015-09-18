@@ -1,0 +1,202 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Chinese (Taiwan) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHT)
+#ifdef _WIN32
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_TRADITIONAL
+#pragma code_page(950)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHT)\r\n"
+    "LANGUAGE 4, 1\r\n"
+    "#pragma code_page(950)\r\n"
+    "#include ""res\\AudioTestTool.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""     // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON                    "res\\AudioTestTool.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_AUDIOTESTTOOL_DIALOG DIALOG  0, 0, 390, 199
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_APPWINDOW | 0x80000000L
+CAPTION "nxp AudioTestTool"
+FONT 8, "MS Shell Dlg"
+BEGIN
+    CONTROL         "System",IDC_1ST_OUTPATH_SYSTEM,"Button",BS_AUTORADIOBUTTON,15,24,38,10
+    CONTROL         "Radio",IDC_1ST_OUTPATH_RADIO,"Button",BS_AUTORADIOBUTTON,61,24,34,10
+    CONTROL         "Navi",IDC_2ND_OUTPATH_NAVI,"Button",BS_AUTORADIOBUTTON,189,24,30,10
+    CONTROL         "Off",IDC_2ND_OUTPATH_OFF,"Button",BS_AUTORADIOBUTTON,265,24,27,10
+    GROUPBOX        "Mute",IDC_MUTE_CTRL_STATIC,306,7,77,13
+    GROUPBOX        "2nd Out Path",IDC_2ND_OUTPATH_STATIC,179,7,117,13
+    CONTROL         "",IDC_1ST_OUT_BALANCE_SLIDER,"msctls_trackbar32",TBS_AUTOTICKS | TBS_BOTH | WS_TABSTOP,42,84,93,27
+    CONTROL         "Disk",IDC_1ST_OUTPATH_DISK,"Button",BS_AUTORADIOBUTTON,101,24,32,10
+    CONTROL         "AUXin",IDC_1ST_OUTPATH_AUXIN,"Button",BS_AUTORADIOBUTTON,135,24,34,10
+    CONTROL         "",IDC_2ND_OUT_LEVEL_PROGRESS,"msctls_progress32",0x1,203,57,65,18,WS_EX_STATICEDGE
+    PUSHBUTTON      ">",IDC_OUT_LEVEL_UP_BUTTON,191,147,37,32
+    PUSHBUTTON      "<",IDC_OUT_LEVEL_DOWN_BUTTON,153,147,37,32
+    CONTROL         "",IDC_1ST_OUT_LEVEL_PROGRESS,"msctls_progress32",0x1,45,57,88,18,WS_EX_STATICEDGE
+    PUSHBUTTON      "Exit/Quit",IDC_EXIT_QUIT_BUTTON,312,135,71,57
+    GROUPBOX        "1st Out Path",IDC_1ST_OUTPATH_STATIC,7,7,170,13
+    CHECKBOX        "Front Right",IDC_MUTE_FRONT_RIGHT_CHECK,349,21,31,17,BS_LEFTTEXT | BS_MULTILINE
+    CHECKBOX        "Front Left",IDC_MUTE_FRONT_LEFT_CHECK,308,21,31,17,BS_LEFTTEXT | BS_MULTILINE
+    CHECKBOX        "Rear Right",IDC_MUTE_REAR_RIGHT_CHECK,349,40,31,17,BS_LEFTTEXT | BS_MULTILINE
+    CHECKBOX        "Rear Left",IDC_MUTE_REAR_LEFT_CHECK,308,40,31,17,BS_LEFTTEXT | BS_MULTILINE
+    CHECKBOX        "Quick All",IDC_MUTE_QUICK_ALL_CHECK,349,77,31,17,BS_LEFTTEXT | BS_MULTILINE
+    PUSHBUTTON      "2nd Out Level:",IDC_2ND_OUT_LEVEL_BUTTON,166,55,35,23,BS_MULTILINE
+    PUSHBUTTON      "1st Out Level:",IDC_1ST_OUT_LEVEL_BUTTON,7,55,35,23,BS_MULTILINE
+    PUSHBUTTON      "Out Balance:",IDC_1ST_OUT_BALANCE_BUTTON,7,85,35,23,BS_MULTILINE
+    PUSHBUTTON      "<<",IDC_OUT_LEVEL_DOWN_BUTTON2,122,147,25,32
+    PUSHBUTTON      ">>",IDC_OUT_LEVEL_UP_BUTTON2,234,147,25,32
+    CTEXT           "0",IDC_1ST_OUT_LEVEL_STATIC,136,57,25,17,SS_CENTERIMAGE | WS_BORDER,WS_EX_DLGMODALFRAME | WS_EX_CLIENTEDGE
+    CTEXT           "0",IDC_2ND_OUT_LEVEL_STATIC,271,57,25,17,SS_CENTERIMAGE | WS_BORDER,WS_EX_DLGMODALFRAME | WS_EX_CLIENTEDGE
+    CTEXT           "0",IDC_1ST_OUT_BALANCE_STATIC,136,88,25,17,SS_CENTERIMAGE | WS_BORDER,WS_EX_DLGMODALFRAME | WS_EX_CLIENTEDGE
+    CONTROL         "Phone",IDC_2ND_OUTPATH_PHONE_RADIO,"Button",BS_AUTORADIOBUTTON,223,23,34,13
+    GROUPBOX        "Volume Set",IDC_VOLUME_CTRL_STATIC,7,36,289,13
+    GROUPBOX        "Wav2ID",IDC_WAV2ID_STATIC,7,155,78,13
+    CHECKBOX        "id 0",IDC_WAV2ID_0_CHECK,7,173,28,11
+    CHECKBOX        "id 1",IDC_WAV2ID_1_CHECK,37,173,25,11
+    CHECKBOX        "id 2",IDC_WAV2ID_2_CHECK,65,173,25,11
+    LTEXT           "powered by Span",IDC_STATIC,250,180,59,12
+    PUSHBUTTON      "Out Fader:",IDC_1ST_OUT_FADER_BUTTON,7,115,35,23,BS_MULTILINE
+    CONTROL         "",IDC_1ST_OUT_FADER_SLIDER,"msctls_trackbar32",TBS_AUTOTICKS | TBS_BOTH | WS_TABSTOP,42,113,93,27
+    CTEXT           "0",IDC_1ST_OUT_FADER_STATIC,135,116,25,17,SS_CENTERIMAGE | WS_BORDER,WS_EX_DLGMODALFRAME | WS_EX_CLIENTEDGE
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904e4"
+        BEGIN
+            VALUE "CompanyName", "TODO: <Company name>"
+            VALUE "FileDescription", "TODO: <File description>"
+            VALUE "FileVersion", "1.0.0.1"
+            VALUE "InternalName", "AudioTestTool.exe"
+            VALUE "LegalCopyright", "TODO: (c) <Company name>.  All rights reserved."
+            VALUE "OriginalFilename", "AudioTestTool.exe"
+            VALUE "ProductName", "TODO: <Product name>"
+            VALUE "ProductVersion", "1.0.0.1"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1252
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_AUDIOTESTTOOL_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 383
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 192
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+#endif    // Chinese (Taiwan) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHT)
+LANGUAGE 4, 1
+#pragma code_page(950)
+#include "res\AudioTestTool.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"     // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

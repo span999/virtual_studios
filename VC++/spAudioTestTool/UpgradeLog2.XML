@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="AudioTestTool">
+</Property><Property Name="Solution File" Value="C:\MyPrivte\develop\VC++\spAudioTestTool\AudioTestTool.sln">
+</Property><Property Name="Date" Value="2012年4月22日">
+</Property><Property Name="Time" Value="下午 17:59">
+</Property><Property Name="Log Number" Value="2">
+</Property></Properties><Event ErrorLevel="0" Project="AudioTestTool" Source="AudioTestTool\AudioTestTool.vcproj" Description="Converting project file 'C:\MyPrivte\develop\VC++\spAudioTestTool\AudioTestTool\AudioTestTool.vcproj'.">
+</Event><Event ErrorLevel="1" Project="AudioTestTool" Source="AudioTestTool\AudioTestTool.vcproj" Description="This application has been updated to include settings related to the User Account Control (UAC) feature of Windows Vista. By default, when run on Windows Vista with UAC enabled, this application is marked to run with the same privileges as the process that launched it. This marking also disables the application from running with virtualization. You can change UAC related settings from the Property Pages of the project.">
+</Event><Event ErrorLevel="1" Project="AudioTestTool" Source="AudioTestTool\AudioTestTool.vcproj" Description="Failed to upgrade platform 'STANDARDSDK_500 (ARMV4I)'. Please make sure you have it installed under '%vctargetspath%\platforms\STANDARDSDK_500 (ARMV4I)'">
+</Event><Event ErrorLevel="1" Project="AudioTestTool" Source="AudioTestTool\AudioTestTool.vcproj" Description="Failed to upgrade platform 'STANDARDSDK_500 (x86)'. Please make sure you have it installed under '%vctargetspath%\platforms\STANDARDSDK_500 (x86)'">
+</Event><Event ErrorLevel="1" Project="AudioTestTool" Source="AudioTestTool\AudioTestTool.vcproj" Description="Failed to upgrade platform 'STANDARDSDK_500 (SH4)'. Please make sure you have it installed under '%vctargetspath%\platforms\STANDARDSDK_500 (SH4)'">
+</Event><Event ErrorLevel="1" Project="AudioTestTool" Source="AudioTestTool\AudioTestTool.vcproj" Description="Failed to upgrade platform 'STANDARDSDK_500 (MIPSII)'. Please make sure you have it installed under '%vctargetspath%\platforms\STANDARDSDK_500 (MIPSII)'">
+</Event><Event ErrorLevel="1" Project="AudioTestTool" Source="AudioTestTool\AudioTestTool.vcproj" Description="Failed to upgrade platform 'STANDARDSDK_500 (MIPSII_FP)'. Please make sure you have it installed under '%vctargetspath%\platforms\STANDARDSDK_500 (MIPSII_FP)'">
+</Event><Event ErrorLevel="1" Project="AudioTestTool" Source="AudioTestTool\AudioTestTool.vcproj" Description="Failed to upgrade platform 'STANDARDSDK_500 (MIPSIV)'. Please make sure you have it installed under '%vctargetspath%\platforms\STANDARDSDK_500 (MIPSIV)'">
+</Event><Event ErrorLevel="1" Project="AudioTestTool" Source="AudioTestTool\AudioTestTool.vcproj" Description="Failed to upgrade platform 'STANDARDSDK_500 (MIPSIV_FP)'. Please make sure you have it installed under '%vctargetspath%\platforms\STANDARDSDK_500 (MIPSIV_FP)'">
+</Event><Event ErrorLevel="1" Project="AudioTestTool" Source="AudioTestTool\AudioTestTool.vcproj" Description="Failed to upgrade 'Debug|STANDARDSDK_500 (ARMV4I)'. Please make sure you have the corresponding platform installed under '%vctargetspath%\platforms\STANDARDSDK_500 (ARMV4I)'">
+</Event><Event ErrorLevel="1" Project="C:\MyPrivte\develop\VC++\spAudioTestTool\AudioTestTool\AudioTestTool.vcproj" Source="" Description="Cannot load the project due to a corrupt project file.">
+</Event><Event ErrorLevel="2" Project="AudioTestTool" Source="AudioTestTool\AudioTestTool.vcproj" Description="The project configuration dimension name/value &quot;(Platform, Win32)&quot; was not found in the project manifest.">
+</Event><Event ErrorLevel="2" Project="C:\MyPrivte\develop\VC++\spAudioTestTool\AudioTestTool\AudioTestTool.vcproj" Source="" Description="The following error has occurred during XML parsing:&#xA;&#xA;File: C:\MyPrivte\develop\VC++\spAudioTestTool\AudioTestTool\AudioTestTool.vcproj&#xA;Line: 46&#xA;Column: 5&#xA;Error Message:&#xA;系統錯誤: -2147154677。&#xA;&#xA;The file 'C:\MyPrivte\develop\VC++\spAudioTestTool\AudioTestTool\AudioTestTool.vcproj' has failed to load.">
+</Event><Event ErrorLevel="2" Project="AudioTestTool" Source="AudioTestTool\AudioTestTool.vcproj" Description="Project upgrade failed.">
+</Event><Event ErrorLevel="3" Project="AudioTestTool" Source="AudioTestTool\AudioTestTool.vcproj" Description="Not Converted">
+</Event><Event ErrorLevel="0" Project="" Source="AudioTestTool.sln" Description="The solution file does not require conversion.">
+</Event><Event ErrorLevel="3" Project="" Source="AudioTestTool.sln" Description="No Conversion Required">
+</Event></UpgradeLog>
