@@ -25,6 +25,7 @@ Partial Class Form1
         Me.components = New System.ComponentModel.Container()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
+        Me.CheckBox3 = New System.Windows.Forms.CheckBox()
         Me.ComboBox2 = New System.Windows.Forms.ComboBox()
         Me.btnStop = New System.Windows.Forms.Button()
         Me.btnStart = New System.Windows.Forms.Button()
@@ -32,12 +33,15 @@ Partial Class Form1
         Me.ListBox1 = New System.Windows.Forms.ListBox()
         Me.CheckBox1 = New System.Windows.Forms.CheckBox()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
+        Me.Button2 = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.TextBox2 = New System.Windows.Forms.TextBox()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.ListBox2 = New System.Windows.Forms.ListBox()
         Me.CheckBox2 = New System.Windows.Forms.CheckBox()
         Me.SerialPort1 = New System.IO.Ports.SerialPort(Me.components)
+        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
+        Me.CheckBox4 = New System.Windows.Forms.CheckBox()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.TabPage2.SuspendLayout()
@@ -55,6 +59,8 @@ Partial Class Form1
         '
         'TabPage1
         '
+        Me.TabPage1.Controls.Add(Me.CheckBox4)
+        Me.TabPage1.Controls.Add(Me.CheckBox3)
         Me.TabPage1.Controls.Add(Me.ComboBox2)
         Me.TabPage1.Controls.Add(Me.btnStop)
         Me.TabPage1.Controls.Add(Me.btnStart)
@@ -68,6 +74,16 @@ Partial Class Form1
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Client Tab"
         Me.TabPage1.UseVisualStyleBackColor = True
+        '
+        'CheckBox3
+        '
+        Me.CheckBox3.AutoSize = True
+        Me.CheckBox3.Location = New System.Drawing.Point(440, 386)
+        Me.CheckBox3.Name = "CheckBox3"
+        Me.CheckBox3.Size = New System.Drawing.Size(74, 16)
+        Me.CheckBox3.TabIndex = 6
+        Me.CheckBox3.Text = "AutoScroll"
+        Me.CheckBox3.UseVisualStyleBackColor = True
         '
         'ComboBox2
         '
@@ -132,6 +148,7 @@ Partial Class Form1
         '
         'TabPage2
         '
+        Me.TabPage2.Controls.Add(Me.Button2)
         Me.TabPage2.Controls.Add(Me.Button1)
         Me.TabPage2.Controls.Add(Me.TextBox2)
         Me.TabPage2.Controls.Add(Me.TextBox1)
@@ -145,9 +162,20 @@ Partial Class Form1
         Me.TabPage2.Text = "Server Tab"
         Me.TabPage2.UseVisualStyleBackColor = True
         '
+        'Button2
+        '
+        Me.Button2.Enabled = False
+        Me.Button2.Location = New System.Drawing.Point(438, 369)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(78, 30)
+        Me.Button2.TabIndex = 6
+        Me.Button2.Text = "Server Down"
+        Me.Button2.UseVisualStyleBackColor = True
+        '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(445, 372)
+        Me.Button1.Enabled = False
+        Me.Button1.Location = New System.Drawing.Point(438, 333)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(78, 30)
         Me.Button1.TabIndex = 5
@@ -194,6 +222,21 @@ Partial Class Form1
         'SerialPort1
         '
         '
+        'Timer1
+        '
+        Me.Timer1.Interval = 200
+        '
+        'CheckBox4
+        '
+        Me.CheckBox4.AutoSize = True
+        Me.CheckBox4.Enabled = False
+        Me.CheckBox4.Location = New System.Drawing.Point(440, 364)
+        Me.CheckBox4.Name = "CheckBox4"
+        Me.CheckBox4.Size = New System.Drawing.Size(78, 16)
+        Me.CheckBox4.TabIndex = 7
+        Me.CheckBox4.Text = "Connection"
+        Me.CheckBox4.UseVisualStyleBackColor = True
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
@@ -225,5 +268,9 @@ Partial Class Form1
     Friend WithEvents btnStart As System.Windows.Forms.Button
     Friend WithEvents ComboBox2 As System.Windows.Forms.ComboBox
     Friend WithEvents SerialPort1 As System.IO.Ports.SerialPort
+    Friend WithEvents CheckBox3 As System.Windows.Forms.CheckBox
+    Friend WithEvents Timer1 As System.Windows.Forms.Timer
+    Friend WithEvents Button2 As System.Windows.Forms.Button
+    Friend WithEvents CheckBox4 As System.Windows.Forms.CheckBox
 
 End Class
