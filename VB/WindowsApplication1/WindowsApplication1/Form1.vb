@@ -5,17 +5,44 @@ Imports System.Net
 Imports System.IO.Ports
 
 
+Structure sComPortSet
+    Public s_comport As SerialPort
+    Public s_portname As String
+    Public s_portbaud As Integer
+End Structure
+
+Structure sTcpClientSet
+    Public s_IPEndPoint As IPEndPoint
+    Public s_TcpClient As TcpClient
+    Public s_ServerIpAddress As IPAddress
+    Public s_iPort As Integer
+    Public s_RemoteIPEndPoint As IPEndPoint
+End Structure
+
+Structure sTcpServerSet
+    Public s_ServerSocket As TcpListener
+    Public s_ClientSocket As TcpClient
+    Public s_iPort As Integer
+    Public s_NetStream As NetworkStream
+End Structure
 
 Public Class Form1
 
-    Private comport As SerialPort
-    Private portname As String = "COM7"
-    Private portbaud As Integer = 38400
+    Dim pv_ComPortData As sComPortSet = New sComPortSet With {.s_portname = "COM7", .s_portbaud = 38400}
 
-    Dim myIPEndPoint As New IPEndPoint(IPAddress.Any, 0)
-    Dim myTcpClient As TcpClient = New TcpClient(myIPEndPoint)
+    'Private comport As SerialPort
+    'Private portname As String = "COM7"
+    'Private portbaud As Integer = 38400
+
+    Dim pv_NetClient As sTcpClientSet = New sTcpClientSet
+    'Dim myIPEndPoint As New IPEndPoint(IPAddress.Any, 0)
+    'Dim myTcpClient As TcpClient = New TcpClient(myIPEndPoint)
+
+    Dim pv_NetServer As sTcpServerSet = New sTcpServerSet With {.s_iPort = 3388}
+
     Dim comportQueue As Queue(Of String) = New Queue(Of String)()
     Dim serverQueue As Queue(Of String) = New Queue(Of String)()
+
     'For thread-safe calls on wonodws forms controls
     Delegate Sub SetTextCallback([text] As String)
 
@@ -25,12 +52,15 @@ Public Class Form1
 
 
     Private Sub initComPort()
-        comport = New SerialPort(portname, portbaud, Parity.None, 8, StopBits.One)
-        comport.ReadTimeout = 10000
+        pv_ComPortData.s_comport = New SerialPort(pv_ComPortData.s_portname, pv_ComPortData.s_portbaud, Parity.None, 8, StopBits.One)
+        pv_ComPortData.s_comport.ReadTimeout = 10000
+        'comport = New SerialPort(portname, portbaud, Parity.None, 8, StopBits.One)
+        'comport.ReadTimeout = 10000
     End Sub
 
     Private Sub closeComPort()
-        comport.Close()
+        pv_ComPortData.s_comport.Close()
+        'comport.Close()
     End Sub
 
     Private Function readComPort() As String
@@ -38,7 +68,8 @@ Public Class Form1
 
         Try
             Do
-                Dim incoming As String = comport.ReadLine()
+                Dim incoming As String = pv_ComPortData.s_comport.ReadLine()
+                'Dim incoming As String = comport.ReadLine()
                 If incoming Is Nothing Then
                     Exit Do
                 Else
@@ -110,14 +141,17 @@ Public Class Form1
 
     Private Sub ComboBox1_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ComboBox1.SelectedIndexChanged
         ListBox1.Items.Add(":get user select " + ComboBox1.Text)
-        portname = ComboBox1.Text
+        'portname = ComboBox1.Text
+        pv_ComPortData.s_portname = ComboBox1.Text
         btnStart.Enabled = True
     End Sub
 
     Private Sub ComboBox2_SelectedIndexChanged(sender As System.Object, e As System.EventArgs) Handles ComboBox2.SelectedIndexChanged
         ListBox1.Items.Add(":get user select " + ComboBox2.Text)
-        portbaud = ComboBox2.Text
-        ListBox1.Items.Add(":get user select " + portbaud.ToString)
+        'portbaud = ComboBox2.Text
+        pv_ComPortData.s_portbaud = ComboBox2.Text
+        ListBox1.Items.Add(":get user select " + pv_ComPortData.s_portbaud.ToString)
+        'ListBox1.Items.Add(":get user select " + portbaud.ToString)
         'btnStart.Enabled = True
     End Sub
 
@@ -175,7 +209,9 @@ Public Class Form1
                 Me.AddList1Text(QueueStr)
                 If CheckBox4.CheckState = CheckState.Checked Then
                     'send datao to server
-                    Dim myNetworkStream As NetworkStream = myTcpClient.GetStream()
+                    Dim myNetworkStream As NetworkStream = pv_NetClient.s_TcpClient.GetStream()
+                    'Dim myNetworkStream As NetworkStream = myTcpClient.GetStream()
+
                     'Dim clientGreeting As String = "Hello! this client message."
                     Dim sendBytes As [Byte]() = Encoding.ASCII.GetBytes(QueueStr)
                     myNetworkStream.Write(sendBytes, 0, sendBytes.Length)
@@ -211,18 +247,27 @@ Public Class Form1
     Private Function clientMain() As Integer
         'Dim myIPEndPoint As New IPEndPoint(IPAddress.Any, 0)
         'Dim myTcpClient As TcpClient = New TcpClient(myIPEndPoint)
-        Dim ServerIpAddress As IPAddress
-        Dim iPort As Integer
+        pv_NetClient.s_IPEndPoint = New IPEndPoint(IPAddress.Any, 0)
+        pv_NetClient.s_TcpClient = New TcpClient(pv_NetClient.s_IPEndPoint)
+
+        'Dim ServerIpAddress As IPAddress
+        'Dim iPort As Integer
         'ServerIpAddress = IPAddress.Parse("192.168.1.109")
         'ServerIpAddress = IPAddress.Parse("192.168.2.111")
-        ServerIpAddress = IPAddress.Parse("192.168.2.109")
-        iPort = 3388
-        Dim RemoteIpEndPoint As New IPEndPoint(ServerIpAddress, iPort)
+        'ServerIpAddress = IPAddress.Parse("192.168.2.109")
+        'iPort = 3388
+        pv_NetClient.s_ServerIpAddress = IPAddress.Parse("192.168.2.109")
+        pv_NetClient.s_iPort = 3388
+
+        pv_NetClient.s_RemoteIPEndPoint = New IPEndPoint(pv_NetClient.s_ServerIpAddress, pv_NetClient.s_iPort)
+        'Dim RemoteIpEndPoint As New IPEndPoint(ServerIpAddress, iPort)
 
         Try
-            myTcpClient.Connect(RemoteIpEndPoint)
+            pv_NetClient.s_TcpClient.Connect(pv_NetClient.s_RemoteIPEndPoint)
+            'myTcpClient.Connect(RemoteIpEndPoint)
             Do
-                If myTcpClient.Connected = True Then
+                'If myTcpClient.Connected = True Then
+                If pv_NetClient.s_TcpClient.Connected = True Then
                     MsgBox("Server Connected")
                     Exit Do
                 End If
@@ -232,7 +277,8 @@ Public Class Form1
         End Try
 
         'send hello to server
-        Dim myNetworkStream As NetworkStream = myTcpClient.GetStream()
+        Dim myNetworkStream As NetworkStream = pv_NetClient.s_TcpClient.GetStream()
+        'Dim myNetworkStream As NetworkStream = myTcpClient.GetStream()
         Dim clientGreeting As String = "Hello! this client message."
         Dim sendBytes As [Byte]() = Encoding.ASCII.GetBytes(clientGreeting)
         myNetworkStream.Write(sendBytes, 0, sendBytes.Length)
@@ -242,15 +288,17 @@ Public Class Form1
     End Function
 
     Private Function serverMain() As Integer
-        Dim serverSocket As New TcpListener(IPAddress.Any, 3388)
+        pv_NetServer.s_ServerSocket = New TcpListener(IPAddress.Any, pv_NetServer.s_iPort)
+        'Dim serverSocket As New TcpListener(IPAddress.Any, 3388)
         Dim requestCount As Integer
-        Dim clientSocket As TcpClient
+        'Dim clientSocket As TcpClient
 
         'msg("Server Starting")
         'ListBox2.Items.Add(":" + "Server Starting")
         MsgBox("Server Starting.......")
         Debug.Print("Server Starting.......")
-        serverSocket.Start()
+        pv_NetServer.s_ServerSocket.Start()
+        'serverSocket.Start()
         'msg("Server Started")
         'ListBox2.Items.Add(":" + "Server Started")
         MsgBox("Server Started")
@@ -260,7 +308,8 @@ Public Class Form1
         'ListBox2.Items.Add(":" + "About to accept connection from client")
         MsgBox("About to accept connection from client.......")
         Debug.Print("About to accept connection from client.......")
-        clientSocket = serverSocket.AcceptTcpClient()
+        pv_NetServer.s_ClientSocket = pv_NetServer.s_ServerSocket.AcceptTcpClient()
+        'clientSocket = serverSocket.AcceptTcpClient()
         'msg("Accept connection from client")
         'ListBox2.Items.Add(":" + "Accept connection from client")
         MsgBox("Accepted connection from client.")
@@ -270,11 +319,13 @@ Public Class Form1
         While (True)
             Try
                 requestCount = requestCount + 1
-                Dim networkStream As NetworkStream = clientSocket.GetStream()
+                pv_NetServer.s_NetStream = pv_NetServer.s_ClientSocket.GetStream()
+                'Dim networkStream As NetworkStream = clientSocket.GetStream()
                 'Dim bytesFrom(1023) As Byte
                 Dim bytesFrom(10024) As Byte
 
-                networkStream.Read(bytesFrom, 0, CInt(clientSocket.ReceiveBufferSize))
+                pv_NetServer.s_NetStream.Read(bytesFrom, 0, CInt(pv_NetServer.s_ClientSocket.ReceiveBufferSize))
+                'networkStream.Read(bytesFrom, 0, CInt(clientSocket.ReceiveBufferSize))
 
                 Dim dataFromClient As String = System.Text.Encoding.ASCII.GetString(bytesFrom)
                 'dataFromClient = dataFromClient.Substring(0, dataFromClient.IndexOf("$"))
@@ -335,8 +386,10 @@ Public Class Form1
 
         SerialPort1.DataBits = 8
         SerialPort1.StopBits = StopBits.One
-        SerialPort1.PortName = portname
-        SerialPort1.BaudRate = portbaud
+        SerialPort1.PortName = pv_ComPortData.s_portname
+        SerialPort1.BaudRate = pv_ComPortData.s_portbaud
+        'SerialPort1.PortName = portname
+        'SerialPort1.BaudRate = portbaud
         SerialPort1.Open()
 
         Me.message1Thread = New System.Threading.Thread(AddressOf Me.message1ThreadSub)
